@@ -117,10 +117,10 @@ variable "startup_script_s3_path" {
 variable "schedulers" {
   description = "(Optional) The number of schedulers that you want to run in your environment."
   type        = number
-  default     = 2
+  default     = 1
   validation {
-    condition     = var.schedulers >= 2 && var.schedulers <= 5
-    error_message = "Error: Value need to be between 2 and 5."
+    condition     = var.schedulers >= 1 && var.schedulers <= 5
+    error_message = "Error: Value need to be between 1 and 5."
   }
 
 }
@@ -139,10 +139,10 @@ variable "webserver_access_mode" {
 variable "min_webservers" {
   description = "(Optional) The minimum number of webserver instances that you want to run in your environment."
   type        = number
-  default     = 2
+  default     = 1
   validation {
-    condition     = var.min_webservers >= 2 && var.min_webservers <= 5
-    error_message = "Error: Value need to be between 2 and 5."
+    condition     = var.min_webservers >= 1 && var.min_webservers <= 5
+    error_message = "Error: Value need to be between 1 and 5."
   }
 }
 
